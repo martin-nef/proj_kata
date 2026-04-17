@@ -1,10 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<%= button_to "Back to notes", notes_path, method: :get, style: "display: inline-block; margin-right: 10px;" %>
+
+<br/>
 
 <%= render @note %>
 
-<div>
-  <%= link_to "Edit this note", edit_note_path(@note) %> |
-  <%= link_to "Back to notes", notes_path %>
-
-  <%= button_to "Destroy this note", @note, method: :delete %>
-</div>

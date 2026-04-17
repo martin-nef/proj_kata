@@ -12,16 +12,26 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <strong>Title:</strong>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :body, style: "display: block" %>
+    <div><strong>Body:</strong></div>
     <%= form.textarea :body %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit nil, style: "display: inline-block" %>
   </div>
 <% end %>
+
+<div>
+  <% if note.persisted? %>
+    <%= button_to "Delete", note, method: :delete,
+          style: "display: inline-block; margin-right: 5px;",
+          form: { data: { turbo_frame: "_top" } } %>
+  <% end %>
+  <%= button_to "Cancel", note, method: :get,
+        style: "display: inline-block;" %>
+</div>

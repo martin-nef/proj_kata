@@ -1,12 +1,16 @@
-<div id="<%= dom_id note %>">
-  <div>
-    <strong>Title:</strong>
-    <%= note.title %>
-  </div>
+<%= turbo_frame_tag note do %>
+  <div id="<%= dom_id note %>">
+    <div>
+      <strong>Title:</strong>
+      <%= note.title %>
+    </div>
 
-  <div>
-    <strong>Body:</strong>
-    <%= note.body %>
+    <div>
+      <strong>Body:</strong>
+      <%= note.body %>
+    </div>
+    <div>
+      <%= button_to "Edit", edit_note_path(note), method: :get %>
+    </div>
   </div>
-
-</div>
+<% end %>
